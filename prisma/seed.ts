@@ -7,6 +7,8 @@ async function main() {
     data:Array.from({length:15},()=>({
       title:faker.lorem.word(),
       body:faker.lorem.paragraph(),
+      // when someone login it will replace this id with the loggedin user id
+      user_id:'user_2h5FYLJYyxPajfTOUmOx5EpD1qf'
     }))
   })
 }
