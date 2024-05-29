@@ -2,11 +2,11 @@
 import React,{useState} from 'react'
 import { Button } from "@/components/ui/button";
 import {  Pen, Plus } from "lucide-react";
-import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle,DialogTrigger,} from "@/components/ui/dialog"
+import {Dialog,DialogContent,DialogHeader,DialogTitle,DialogTrigger,} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { createToDoListActions, getToDoListActions, updateToDoListActions } from "@/actions/todoActions";
-import {Form,FormControl,FormDescription,FormField,FormItem,FormLabel,FormMessage} from "@/components/ui/form"
+import { updateToDoListActions } from "@/actions/todoActions";
+import {Form,FormControl,FormField,FormItem,FormLabel,FormMessage} from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -43,10 +43,7 @@ const EditTodo = ({todo}:{todo:ITodo}) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </DialogDescription>
+          <DialogTitle>Edit Todo</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 py-4">
         <Form {...form}>
@@ -60,7 +57,6 @@ const EditTodo = ({todo}:{todo:ITodo}) => {
       <FormControl>
         <Input placeholder="Title" {...field} />
       </FormControl>
-      <FormDescription>This is your public display name.</FormDescription>
       <FormMessage />
     </FormItem>
   )}
@@ -78,10 +74,6 @@ const EditTodo = ({todo}:{todo:ITodo}) => {
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-                You can <span>@mention</span> other users and organizations to
-                link to them.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}

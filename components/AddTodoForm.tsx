@@ -2,10 +2,10 @@
 import React,{useState} from 'react'
 import { Button } from "@/components/ui/button";
 import {  Plus } from "lucide-react";
-import {Dialog,DialogContent,DialogDescription,DialogFooter,DialogHeader,DialogTitle,DialogTrigger,} from "@/components/ui/dialog"
+import {Dialog,DialogContent,DialogHeader,DialogTitle,DialogTrigger,} from "@/components/ui/dialog"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { createToDoListActions, getToDoListActions } from "@/actions/todoActions";
+import { createToDoListActions } from "@/actions/todoActions";
 import {Form,FormControl,FormDescription,FormField,FormItem,FormLabel,FormMessage} from "@/components/ui/form"
 import { Textarea } from "@/components/ui/textarea";
 import { useForm } from "react-hook-form"
@@ -44,10 +44,7 @@ const AddTodoForm = ({userId}:{userId:string|null}) => {
       </DialogTrigger>
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
-          <DialogTitle>Edit profile</DialogTitle>
-          <DialogDescription>
-            Make changes to your profile here. Click save when you&apos;re done.
-          </DialogDescription>
+          <DialogTitle>Add Todo</DialogTitle>
         </DialogHeader>
         <div className="grid gap-4 py-4">
         <Form {...form}>
@@ -61,7 +58,6 @@ const AddTodoForm = ({userId}:{userId:string|null}) => {
       <FormControl>
         <Input placeholder="Title" {...field} />
       </FormControl>
-      <FormDescription>This is your public display name.</FormDescription>
       <FormMessage />
     </FormItem>
   )}
@@ -79,10 +75,6 @@ const AddTodoForm = ({userId}:{userId:string|null}) => {
                   {...field}
                 />
               </FormControl>
-              <FormDescription>
-                You can <span>@mention</span> other users and organizations to
-                link to them.
-              </FormDescription>
               <FormMessage />
             </FormItem>
           )}
