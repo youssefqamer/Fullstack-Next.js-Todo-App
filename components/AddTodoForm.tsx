@@ -93,8 +93,7 @@ const AddTodoForm = ({userId}:{userId:string|null}) => {
   render={({ field }) => (
     <FormItem>
       <FormControl className='mr-2'>
-        <Checkbox onCheckedChange={field.onChange} checked={field.value} indeterminate={field.value === null} {...field} />
-
+        <Checkbox onCheckedChange={field.onChange} checked={field.value}  />
       </FormControl>
       <FormLabel>Completed</FormLabel>
       <FormMessage />
